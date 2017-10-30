@@ -1,0 +1,170 @@
+\chapter{Class UNK - Monday, October 23\ts{rd}, 2017}
+\section{\S 2.8 Subspaces}
+
+\begin{imp:defn}{Subspace}{} A subspace of rton is any set H in  that has three properties:
+\begin{itemize}
+  \item  is in H
+  \item For each u, v, in H u+v is also in H (Closure under addition)
+  \item For each u in H and scalar C, cu is in H (Closure under scalar multiplication)
+\end{itemize}
+\end{imp:defn}
+\begin{ex}
+%image
+fdsaf
+Is H a subspace of rto2?
+\begin{itemize}
+\item is in h \checkmark
+\item u+v is not in H for all u,v in H
+\item Not closed under scalar multiplication either (-u not in H).
+\end{itemize}
+H is not a subspace
+\end{ex}
+\begin{ex}
+%image
+\begin{itemize}
+    \item is in H \checkmark
+    \item closed under addition \checkmark
+    \item closed under scalar multiplication \checkmark
+\end{itemize}
+H is a subspace of rto2
+\end{ex}
+\begin{ex}
+Which of the following are subspaces of $\mathbb{R}^{2}$?
+
+\begin{itemize}
+    \item %image\\
+    not a subspace o is not in h
+    \item %imgae\\
+    $\mathbb{R}^2$ is a subspace of $\mathbb{R}^2$
+    \item %image\\
+    $\mathbb{R}^2$ is a subspace of $\mathbb{R}^2$
+    \item %image\\
+    \begin{itemize}
+        \item o is in H \checkmark
+        \item Closed under scalar multiplicaiton \checkmark
+        \item Not closed unfer addition x u+(-v) in in H.
+    \end{itemize}
+    not a subspace of $\mathbb{R}^2$
+    \item %image% 
+    stuff
+\end{itemize}
+\end{ex}
+So what are do subspaces of $\mathbb{R}^2$ look like?
+\begin{itemize}
+    \item They are copies of $\mathbb{R}^0$, $\mathbb{R}^1$, $\mathbb{R}^2$... $\mathbb{R}^n$ that contain the zero vector.
+\end{itemize}
+\begin{ex}
+In $\mathbb{R}^3$, possible subspaces are:
+\begin{itemize}
+    \item Zero Subspaces
+    \item Lines
+    \item Planes
+\end{itemize}
+\end{ex}
+\begin{ex}
+If H=span{$v_1$,$v_2$} ({$av_1$,$bv_2$} for any a,b), then H is a subspace of $\mathbb{R}^n$
+\begin{itemize}
+\item o is in H \checkmark
+\begin{itemize}
+    \item since o*$v_1$ +o*$v_2$=o
+\end{itemize}
+\item closed under addition \checkmark
+\begin{itemize}
+    \item $u=a_1v_1+b_1v_2$
+    \item $w=a_2v_1+b_2v_2$
+    \item $u+w=a_1v_1+b_1v_2+a_2v_1+b_2v_2$
+    \item $u+w=(a_1+a_2)v_1+(b_1+b_2)v_2$
+    \item which is span{$v_1$,$v_2$}
+\end{itemize}
+\item closed under scalar multiplication
+\begin{itemize}
+    \item $u=av_1+bv_2$
+    \item $c*u=c(av_1+bv_2)=(c*a)v_1+(c*b)v_2$
+\end{itemize}
+which is span{$v_1$,$v_2$}
+\end{itemize}
+\end{ex}
+\begin{imp:defn}{Column Space}{} The column space of a matrix A, denoted col(A), is the set of all linear combinations of the columns of A. (col(a) is a subspace)
+\end{imp:defn}
+\begin{ex}
+Let $A=
+\begin{bmatrix}
+   1 & -3 & -4\\
+   -4 & 6 & -2\\
+   -3 & 7 & 6\\
+\end{bmatrix}
+$ and $b= 
+\begin{bmatrix}
+   3 \\
+   3 \\
+   -4\\
+\end{bmatrix}$\\
+is b in Col(A)?\\
+if b is a linear combination of the columns of A,
+the Ax=b has a solution. We are asking whether [A|b] is consistant of not.\\
+$
+\begin{bmatrix}
+   1 & -3 & -4 & | & 3\\
+   -4 & 6 & -2 & | & 3\\
+   -3 & 7 & 6 & | & -4\\
+\end{bmatrix}
+$ goes to $
+\begin{bmatrix}
+   1 & -3 & -4 & | & 3\\
+   0 & -6 & -18 & | & 15\\
+   0 & 0 & 0 & | & 0\\
+\end{bmatrix}
+$\\
+No pivot in augmented column, so b is in col(A).\\
+Note: b in col(A) for every b in $\mathbb{R}^m$\\
+\begin{itemize}
+    \item Ax=b has a solution for every b in $\mathbb{R}^m$
+    \item The columns of A span $\mathbb{R}^m$
+    \item A has a pivot in every row in REF
+\end{itemize}
+\end{ex}
+\begin{imp:defn}{Null Space}{} The null space of matrics A, denoted null(A), is the set of all solutions to Ax=$\vec o$
+\end{imp:defn}
+\begin{note} Any solution set of Ax=$\vec o$ can be written in parametric form.\\
+$x=x_2\begin{bmatrix}
+0\\
+2\\
+1\\
+\end{bmatrix} + x_3 \begin{bmatrix}
+0\\
+0\\
+1\\
+\end{bmatrix} =$span$ \{ \begin{bmatrix}
+0\\
+2\\
+1\\
+\end{bmatrix} \begin{bmatrix}
+0\\
+0\\
+1\\
+\end{bmatrix} \}$\\
+so null(A) is a subspace.
+\end{note}
+\begin{imp:defn}{Basis for a Subspace}{} A basis for a subspace H is a linearly independent set that spans H.
+\end{imp:defn}
+\begin{ex}
+Find a basis for null(A), if
+$A=\begin{bmatrix}
+-3 & 6 & -1 & 1 &-7\\
+1 & -2 & 2 & 3 & -1\\
+2 & -4 & 5 & 8 &-4 \\
+\end{bmatrix}$\\
+$A=\begin{bmatrix}
+1 & -2 & 0 & -1 & -3 & | & 0\\
+0 & 0 & 1 & 2 & -2 & | & 0\\
+0 & 0 & 0 & 0 & 0  & | & 0\\
+\end{bmatrix}$
+\begin{align*}
+    x_1-2x_2-x_4+3x_5&=0\\
+    x_2&=x_2\\
+    x_3+2x_4-2x_5&=0\\
+    x_4&=x_4\\
+    x_5&=x_5
+\end{align*}
+
+\end{ex}
